@@ -2,7 +2,7 @@
 #streamlit for its ability to make web-based applications without HTML or Java
 import streamlit as st
 #Allows us to interact with the ChatGPT OpenAI's API
-from openai import OpenAI
+import openai
 #Interacts with operating system
 import os
 
