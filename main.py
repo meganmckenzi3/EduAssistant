@@ -9,7 +9,7 @@ import openai
 
 # Initialize OpenAI client, use os to retrieve API key
 #Using an environmentala variable rather than hardcoding into script
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Function to create a lesson plan using AI
 #This function takes in a prompt and returns lesson plan using 5 input parameters
@@ -34,7 +34,7 @@ def create_lesson_plan(time, grade, environment, confidence, topic):
 #Defining try-except for exception handling while communicating with OpenAI API
     #Define parameters of model and how the systerm and user will interact
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             #Define whose speaking and instructions for the assistant
             messages=[
@@ -71,7 +71,7 @@ def create_assessment(grade, lesson_plan, topic):
     """
 
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful teacher education assistant who creates clear, effective assessments."},
