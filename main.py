@@ -1,10 +1,11 @@
 #Import Necessary Libraries for EduAssistant
 #streamlit for its ability to make web-based applications without HTML or Java
 import streamlit as st
-#Allows us to interact with the ChatGPT OpenAI's API
-import openai
 #Interacts with operating system
 import os
+os.system("pip install openai")
+#Allows us to interact with the ChatGPT OpenAI's API
+import openai
 
 # Initialize OpenAI client, use os to retrieve API key
 #Using an environmentala variable rather than hardcoding into script
